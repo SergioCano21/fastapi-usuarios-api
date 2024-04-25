@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from db.db import client
-from controllers.usuariosCRUD import router as usuarios_router
+from controller.usuarioCRUD import router as usuarios_router
 
 
 app = FastAPI()
