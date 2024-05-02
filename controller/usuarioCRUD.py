@@ -39,7 +39,7 @@ async def find_by_email_usuario(email:str):
 
 @router.delete("/{email}", response_description="Elimimar usuario", response_model=Usuario)
 async def delete_usuario(email:str):
-    deleted_usuario = collection.find_one_and_delete({"email": email})
+    deleted_usuario = await collection.find_one_and_delete({"email": email})
     if deleted_usuario:
         return deleted_usuario
     raise HTTPException(status_code=404, detail="Usuario no encontrado")
